@@ -35,7 +35,7 @@ window.SnakeGame.Snake = (function() {
             case 'left':
                 if (this.direction === 'right') return;
 
-                if (coordinates[0] === 0) return this.game.lose();
+                if (coordinates[0] === 0) return this.game.restart();
 
                 coordinates[0] -= this.step;
                 this.direction = 'left';
@@ -44,7 +44,7 @@ window.SnakeGame.Snake = (function() {
             case 'right':
                 if (this.direction === 'left') return;
 
-                if (coordinates[0] === this.game.options.size[0] - 10) return this.game.lose();
+                if (coordinates[0] === this.game.options.size[0] - 10) return this.game.restart();
 
                 coordinates[0] += this.step;
                 this.direction = 'right';
@@ -53,7 +53,7 @@ window.SnakeGame.Snake = (function() {
             case 'up':
                 if (this.direction === 'down') return;
 
-                if (coordinates[1] === 0) return this.game.lose();
+                if (coordinates[1] === 0) return this.game.restart();
 
                 coordinates[1] -= this.step;
                 this.direction = 'up';
@@ -62,7 +62,7 @@ window.SnakeGame.Snake = (function() {
             case 'down':
                 if (this.direction === 'up') return;
 
-                if (coordinates[1] === this.game.options.size[1] - 10) return this.game.lose();
+                if (coordinates[1] === this.game.options.size[1] - 10) return this.game.restart();
 
                 coordinates[1] += this.step;
                 this.direction = 'down';
@@ -77,7 +77,7 @@ window.SnakeGame.Snake = (function() {
             this.particles[_i].style.top  = cpc[1];
 
             if (coordinates[0] === cpc[0] && coordinates[1] === cpc[1]) {
-                return this.game.lose();
+                return this.game.restart();
             }
         }
 
@@ -237,6 +237,7 @@ window.SnakeGame.Game = (function() {
 
 
     Game.prototype.restart = function() {
+        this.stop();
         this._intervalId = setInterval(this.run, this.options.speed);
 
         this.snake.reset();
@@ -245,13 +246,6 @@ window.SnakeGame.Game = (function() {
         window.addEventListener('keydown', this.listener, false);
 
         return this;
-    };
-
-
-    Game.prototype.lose = function() {
-        this.stop();
-        alert("Loser! You're loser!");
-        this.restart();
     };
 
 
