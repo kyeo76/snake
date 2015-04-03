@@ -1,0 +1,269 @@
+body {
+  margin: 0px;
+}
+
+body,
+body * {
+  -webkit-transition: background-color .1s ease;
+  transition:         background-color .1s ease;
+}
+
+/*
+*   Gumba color scheme
+*/
+
+body.gumba {
+  background-color: rgba(189, 249, 233, 0.57);
+}
+
+body.gumba .playground {
+  background-color: rgba(254, 255, 196, 1);
+
+  -webkit-transform: rotateY(23degdeg);
+  transform:         rotateY(23degdeg);
+}
+
+body.gumba .snake-particle {
+  background-color: rgb(169, 159, 216);
+}
+
+body.gumba .apple {
+  background-color: #000000;
+}
+
+
+/*
+*   Scooter color scheme
+*/
+
+body.scooter {
+  background-color: rgba(108, 233, 255, 0.57);
+}
+
+body.scooter .playground {
+  background-color: rgba(0, 52, 255, 0.11);
+
+  -webkit-transform: rotateY(180deg);
+  transform:         rotateY(180deg);
+}
+
+body.scooter .snake-particle {
+  background-color: rgb(58, 120, 232);
+}
+
+body.scooter .apple {
+  background-color: #00C5FF;
+}
+
+
+/*
+*   Cool color scheme
+*/
+
+body.cool {
+  background-color: rgba(235, 255, 108, 0.46);
+}
+
+body.cool .playground {
+  background-color: rgba(0, 255, 245, 0.17);
+
+  -webkit-transform: rotateY(-33deg);
+  transform:         rotateY(-33deg);
+}
+
+body.cool .snake-particle {
+  background-color: rgb(131, 131, 131);
+}
+
+body.cool .apple {
+  background-color: rgba(255, 0, 0, 0.49);
+}
+
+
+/*
+*   Dude color scheme
+*/
+
+body.dude {
+  background-color: rgba(255, 108, 108, 1);
+}
+
+body.dude .playground {
+  background-color: rgba(255, 255, 255, 0.49);
+}
+
+body.dude .snake-particle {
+  background-color: rgba(0, 0, 0, 0.18);
+}
+
+body.dude .apple {
+  background-color: rgba(255, 255, 255, 0.49);
+}
+
+
+/*
+*   Jock color scheme
+*/
+
+body.jock {
+  background-color: rgba(255, 186, 108, 0.76);
+}
+
+body.jock .playground {
+  background-color: rgba(0, 0, 0, 0.49);
+
+  -webkit-transform: rotateY(50deg);
+  transform:         rotateY(50deg);
+}
+
+body.jock .snake-particle {
+  background-color: rgba(255, 252, 0, 0.13);
+}
+
+body.jock .apple {
+  background-color: rgba(239, 255, 0, 1);
+}
+
+
+/*
+*   Liger color scheme
+*/
+
+body.liger {
+  background-color: #ffffff;
+}
+
+body.liger .playground {
+  background-color: rgba(0, 0, 0, 0.13);
+
+  -webkit-transform: rotateY(15deg);
+  transform:         rotateY(15deg);
+}
+
+body.liger .snake-particle {
+  background-color: #ffffff;
+}
+
+body.liger .apple {
+  background-color: #ff0000;
+}
+
+
+/*
+*   Tiger color scheme
+*/
+
+body.tiger {
+  background-color: rgba(0, 0, 0, 0.76);
+}
+
+body.tiger .playground {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+body.tiger .snake-particle {
+  background-color: rgba(255, 255, 255, 0.84);
+}
+
+body.tiger .apple {
+  background-color: rgba(255, 0, 0, 0.51);
+}
+
+
+/*
+*   Hawk color scheme
+*/
+
+body.hawk {
+  background-color: rgba(0,0,0,0.03);
+}
+
+body.hawk .playground {
+  background-color: #ffffff;
+
+  -webkit-transform: rotateY(180deg);
+  transform:         rotateY(180deg);
+}
+
+body.hawk .snake-particle {
+  background-color: rgba(221, 29, 211, 0.6);
+}
+
+body.hawk .apple {
+  background-color: #4EB3FC;
+}
+
+
+/*
+*   Ruby color scheme
+*/
+
+body.ruby {
+  background-color: rgba(121, 7, 7, 0.84);
+}
+
+body.ruby .playground {
+  background-color: rgba(29, 26, 26, 0.6);
+}
+
+body.ruby .snake-particle {
+  background-color: rgba(121, 7, 7, 0.84);
+}
+
+body.ruby .apple {
+  background-color: rgba(0, 0, 0, 0.24);
+}
+
+
+/*
+*   Defaults
+*/
+
+.field {
+  display: table;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.field__container {
+  display: table-cell;
+  vertical-align: middle;
+
+  -webkit-perspective: 750px;
+  -moz-perspective:    750px;
+  perspective:         750px;
+}
+
+.playground {
+  width: 500px;
+  height: 500px;
+  display: inline-block;
+  background: #ffffff;
+  position: relative;
+  border-radius: 2px;
+
+  box-shadow:
+    0px 1px 0px rgba(0,0,0,0.1),
+    1px 0px 0px rgba(0,0,0,0.03),
+    -1px 0px 0px rgba(0,0,0,0.03)
+  ;
+
+  -webkit-transition:
+    background-color .1s ease,
+    transform .6s cubic-bezier(.66,-0.77,.46,1.76)
+  ;
+
+  transition:
+    background-color .2s ease,
+    transform .6s cubic-bezier(.66,-0.77,.46,1.76)
+  ;
+}
+
+.snake-particle,
+.apple {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 1px;
+}
