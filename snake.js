@@ -272,10 +272,6 @@ window.SnakeGame.Game = (function() {
             case 40:
                 game.snake.update('down');
             break;
-
-            case 27: // esc :DEBUG
-                game.stop();
-            break;
         }
     };
 
